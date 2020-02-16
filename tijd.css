@@ -1,0 +1,30 @@
+body{
+    font-size: 50px;
+    font-family: 'Coming Soon', cursive;
+    height: 100%;
+}
+
+html{
+    height: 59%;
+}
+
+#morgen {
+    background-image: url("images/morning.png");
+}
+#middag {
+    background-image: url("images/afternoon.png");
+}
+#avond {
+    background-image: url("images/evening.png");
+}
+#nacht {
+    background-image: url("images/night.png");
+}
+
+.container{
+    margin: 0 auto;
+    width: 420px;
+    text-align: center;
+    height: 200px;
+    margin-top: 20%;
+}
