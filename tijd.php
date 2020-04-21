@@ -1,3 +1,18 @@
+<?php
+$timeHours = date("G")+1;//+1 because it otherwise doesn't display good on my client
+$dateTime = date($timeHours.":i");
+
+if($timeHours >= 6 && $timeHours < 12){
+    $timeOfDay = "morgen";
+}elseif($timeHours >= 12 && $timeHours < 18){
+    $timeOfDay = "middag";
+}elseif($timeHours >= 18 && $timeHours < 24){
+    $timeOfDay = "avond";
+}else{
+    $timeOfDay = "nacht";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,27 +23,10 @@
     <link href="tijd.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Coming+Soon&display=swap" rel="stylesheet">
 </head>
-<body id="<?=$status?>">
+<body id=<?php echo"$timeOfDay"?>>
     <div class="container">
-    <?php
-        $time = date("H:i");
-        $tijd;
-        if($time > "5:59" && $time < "12:00"){
-            $tijd = "Goede morgen! </br>";
-            $status = "morgen";
-        }else if($time > "11:59" && $time < "18:00"){
-            $tijd = "Goede middag! </br>";
-            $status = "middag";
-        }else if($time > "17:59" && $time < "00:00"){
-            $tijd = "Goede avond! </br>";
-            $status = "avond";
-        }else if($time > "23:59" && $time < "06:00"){
-            $tijd = "Goede nacht! </br>";
-            $status = "nacht";
-        }
-        echo "$tijd";
-        echo "De tijd is nu $time";
-    ?>
+        <p>Goede <?php echo"$timeOfDay"?> </p>
+        <p>Het is nu <?php echo"$dateTime"?></p>
     </div>
 </body>
 </html>
